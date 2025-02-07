@@ -1,23 +1,20 @@
-let params = new URLSearchParams(window.location.search);
-let type = params.get('id');
+document.addEventListener("DOMContentLoaded", function() {
+    fetch(`/data/destinations.json`)
+    .then(response => response.json())
+    .then(function(data) {
+        let sectionElm = document.querySelector("section");
+        let listElm = document.createElement("ul");
+        listElm.classList.add("details");
 
-fetch(`/data/destinations.json`)
-.then(response => response.json()).then(function(data) {
-    let sectionElm = document.querySelector("section");
-    let listElm = document.createElement("ul");
-    listElm.classList.add("details");
-
-    listElm.innerHTML = `
-       ${data.destinations.map(destinations => 
-        `<li>
-           <p>${destinations.id}</p>
-           <img src="img/${destinations.image}"> 
-           <p>${destinations.destination}</p>
-           <h2>${destinations.title}</h2>
-           <p>${destinations.subtitle}</p>
-           <p>${destinations.text}</p>
-        </li>`).join("")}
-    `;
-    
-    sectionElm.appendChild(listElm);
+        listElm.innerHTML = `
+           ${data.destinations.map(destinations => `
+               <li>
+                   <a href="destination.html?id=${destinations.id}">${destinations.destination}</a>
+                   <img src="img/${destinations.image}" alt="${destinations.title}"> 
+                   <button class="more-button" onclick="location.href='destination.html?id=${destinations.id}'">More</button>
+               </li>`).join("")}
+        `;
+        
+        sectionElm.appendChild(listElm);
+    });
 });
