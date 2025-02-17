@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <img src="img/${destination.image}">
                         <div class="destination__details--text">
                             <button class="heart" data-id="${destination.id}">
-                                <i class="bi bi-bookmark-heart"></i>
+                                <i class="bi bi-heart"></i>
                             </button>
                             <a href="destination.html?id=${destination.id}">MORE</a>
                         </div>
