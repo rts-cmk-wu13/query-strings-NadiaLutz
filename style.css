@@ -94,6 +94,7 @@ li {
     height: 60rem;
     margin-top: 5rem;
     object-fit: cover;
+    position: relative;
 }
 
 .detail__div--item p {
@@ -116,5 +117,23 @@ li {
 }
 
 .favorite {
-    color: red;
+    color: hotpink;
+}
+
+.heart__favorite--btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 1; 
+    position: absolute;
+    top: 8%;
+    left: 40%;
+}
+
+.heart__favorite--btn p {
+    margin: 0;
+    width: min-content;
+    text-transform: uppercase;
+    font-weight: 600;
 }

@@ -4,6 +4,9 @@ let search = window.location.search;
 let params = new URLSearchParams(search);
 let id = params.get("id");
 console.log(id);
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
  
 fetch(`/data/${id}.json`)
     .then(response => response.json())
@@ -18,7 +21,17 @@ fetch(`/data/${id}.json`)
             let div = document.createElement("div");
             div.classList.add("detail__div--item");
             div.innerHTML = `
+            <div>
+                ${favorites.includes(id) ? `
+                <button class="heart__favorite--btn">
+                    <i class="bi bi-heart-fill"></i>
+                    <p>Favorite</p>
+                </button>
+                ` : ''}
+
+
                 <img src="img/${data.image}"> 
+                </div>
                 <div>
                 <div>
                     <h1>${data.destination}</h1>
