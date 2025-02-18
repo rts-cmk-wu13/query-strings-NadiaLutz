@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 listElm.classList.add("ul");
 
                 data.destinations.forEach(destination => {
-                    console.log("Destination ID:", destination.id); // Log the destination ID
+                    console.log("Destination ID:", destination.id); 
                     let isFavorite = favorites.includes(destination.id);
                     let listItem = document.createElement("li");
                     listItem.innerHTML = `

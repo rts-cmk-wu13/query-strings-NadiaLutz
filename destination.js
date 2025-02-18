@@ -18,14 +18,14 @@ fetch(`/data/${id}.json`)
             let div = document.createElement("div");
             div.classList.add("detail__div--item");
             div.innerHTML = `
-                <img src="img/${data.image}">
-               
+                <img src="img/${data.image}"> 
                 <div>
                 <div>
                     <h1>${data.destination}</h1>
                     <h2>${data.title}</h2>
+                      <p>${data.subtitle}</p>
                      </div>
-                    <p>${data.subtitle}</p>
+                  
                     <p>${data.text}</p>
                     <h3>${"Faciliteter"}</h3>
                 <ul>
@@ -35,12 +35,6 @@ fetch(`/data/${id}.json`)
                     <li>${data.facilities[3]}</li>
                 </ul>
                 </div>
- 
- 
- 
- 
-            `
- 
-       
+            `    
         detailSection.append(div)
     })

@@ -11,7 +11,7 @@ p {
 }
 
 .destination__list h1 {
-    text-align: left;
+    margin-inline: 0 75rem;
     font-size: 3rem;
 }
 
@@ -37,11 +37,15 @@ p {
     object-fit: cover; 
 }
 
+.destination__details--item {
+    background: rgba(206, 249, 255, 1);
+}
+
 .destination__details--text {
     display: flex;
     justify-content: space-between; 
-    background: rgba(206, 249, 255, 1);
-    padding: 2rem 1rem;
+    align-items: center;
+    padding: 2rem 1.5rem;
     width: 25rem;
 }
 
@@ -55,6 +59,9 @@ p {
     object-fit: cover; 
 }
 
+.bi {
+    font-size: 1.5rem;
+}
 
 button {
     background: none;
@@ -65,6 +72,7 @@ button {
 a {
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 li {
